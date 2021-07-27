@@ -11,6 +11,9 @@ const express = require('express');
 const app = express();
 const db = require('./models');
 
+// const dotenv = require("dotenv");
+// dotenv.config({ path: "../.env" });
+
 // connect MySQL db with code using sequelize
 // in config.json update credentials to db so it can connect
 db.sequelize.sync().then(() => {
