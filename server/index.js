@@ -9,7 +9,14 @@
 // now we can use command 'npm start'
 const express = require('express');
 const app = express();
+// to get access to json body directly
+app.use(express.json());
+
 const db = require('./models');
+
+
+const postRouter =  require('./routes/Posts');
+app.use('/posts', postRouter);
 
 // const dotenv = require("dotenv");
 // dotenv.config({ path: "../.env" });
@@ -20,6 +27,8 @@ db.sequelize.sync().then(() => {
     app.listen(3001, () => {
         console.log('Server running on port 3001');
     })
+}).catch((error) => {
+    console.log(error.message);
 })
 
 // app.listen(3001, () => {

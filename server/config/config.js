@@ -1,6 +1,7 @@
 // require("dotenv").config(); // this is important!
 
 const dotenv = require("dotenv");
+// shouldn't it be ../../.env ????
 dotenv.config({ path: "../.env" });
 
 module.exports = {
@@ -8,6 +9,9 @@ module.exports = {
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATABASE,
+    // causes error
+    // host: "localhost",
+    // port: 3001,
     dialect: "mysql",
   },
   test: {
