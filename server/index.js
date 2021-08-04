@@ -9,6 +9,7 @@
 // now we can use command 'npm start'
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
 // to get access to json body directly to send below in Postman via POST req
 /**
@@ -18,7 +19,8 @@ const app = express();
 *      'text': 'Delicious cookie',
  * }
  */
-app.use(express.json());
+app.use(express.json()); //middleware
+app.use(cors()); //middleware - whitelists on PC so you can call localhost/api
 
 const db = require('./models');
 
