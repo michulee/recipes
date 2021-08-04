@@ -9,7 +9,15 @@
 // now we can use command 'npm start'
 const express = require('express');
 const app = express();
-// to get access to json body directly
+
+// to get access to json body directly to send below in Postman via POST req
+/**
+ * {
+*      'title': 'Cookie',
+*      'caption': 'This is a cookie',
+*      'text': 'Delicious cookie',
+ * }
+ */
 app.use(express.json());
 
 const db = require('./models');
