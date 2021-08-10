@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import axios from 'axios';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// import './App.scss';
+import Home from './pages/Home/Home';
 
 function App() {
   const [state, setState] = useState([]);
@@ -14,13 +16,17 @@ function App() {
   // 15:22 - https://www.youtube.com/watch?v=DO_wR1tx-O0&t=12s&ab_channel=PedroTech
   return (
     <>
-      <div className="App">
+      <Router>
         <div>
           {state.map((value) => {
             return <div key={value.id}>{value.title}</div>
           })}
         </div>
-      </div>
+
+        <Switch>
+          <Route path='/' component={Home} />
+        </Switch>
+      </Router>
     </>
   );
 }
