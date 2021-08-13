@@ -10,7 +10,7 @@ export default function SmallCard(props) {
   // if (state.banner) {
     return (
       <div className="smallCard">
-        <img src={props.url}/>
+        <img src={props.src} alt={props.alt}/>
       </div>
     );
   // } else {

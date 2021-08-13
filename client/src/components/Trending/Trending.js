@@ -6,9 +6,6 @@ import {v4 as uuidv4} from 'uuid';
 import SmallCard from "../Cards/SmallCard/SmallCard";
 
 export default function Trending(props) {
-  const [state, setState] = useState({
-    banner: "",
-  });
   const [photos, setPhotos] = useState([]);
 
   // const CardItem = (props) => {
@@ -19,12 +16,19 @@ export default function Trending(props) {
   // }
 
   const CardList = (props) => {
-    const listOfCards = props.map((src) => {
-      // <CardItem key={uuidv4()} src={url}/>
-      <SmallCard key={uuidv4()} src={src}/>
+    const photos = props.src;
+    const listOfCards = photos.map((photo) => {
+      // <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
+      return <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
     });
+    //this works with photos.map((photo) => <SmallCard/>)
+    // return(
+    //   <div>{listOfCards}</div>
+    // );
+
+    //this works with photos.map((photo) => return <SmallCard/>)
     return(
-      {listOfCards}
+      listOfCards
     );
   }
 
@@ -32,11 +36,8 @@ export default function Trending(props) {
   // componentDidUpdate() fires with new props or setState or forceUpdate
   useEffect(() => {
     const fetchData = async () => {
-      // const data = await unsplash.photos.get({ photoId: "nBtmglfY0HU" });
-      // setState({ ...state, banner: data.response });
-
       const data = await unsplash.collections.getPhotos({ collectionId: 'e6Ypx3GRJLw' })
-      setPhotos(data);
+      setPhotos(data.response.results);
     };
     fetchData();
   });
@@ -45,7 +46,10 @@ export default function Trending(props) {
     return (
       <div className="trending">
         <h2 className="subheader">Trending</h2>
-        {/* <CardList src={photos}/> */}
+        {/* {console.log(<CardList/>)} */}
+        <div className="grid">
+          <CardList src={photos}/>
+        </div>
       </div>
     );
   } else {

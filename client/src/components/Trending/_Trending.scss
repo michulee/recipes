@@ -7,4 +7,9 @@
         text-transform: uppercase;
         letter-spacing: 0.5rem;
     }
+    .grid {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
 }
