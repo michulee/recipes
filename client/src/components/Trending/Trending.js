@@ -5,6 +5,11 @@ import unsplash from "../../api/unsplash";
 import {v4 as uuidv4} from 'uuid';
 import SmallCard from "../Cards/SmallCard/SmallCard";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
+// import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
+
 export default function Trending(props) {
   const [photos, setPhotos] = useState([]);
 
@@ -49,6 +54,15 @@ export default function Trending(props) {
         {/* {console.log(<CardList/>)} */}
         <div className="grid">
           <CardList src={photos}/>
+          <FontAwesomeIcon icon={faArrowAltCircleRight} size="3x"/>
+          {/* <FontAwesomeIcon icon="arrow-alt-circle-right" /> */}
+          {/* <FontAwesomeIcon icon={['far', 'arrow-alt-circle-right']}/> */}
+          {/* <FontAwesomeIcon icon={['fas', 'coffee']} /> */}
+
+          {/* <FontAwesomeIcon icon={['far', 'arrowAltCircleRight']}/> */}
+          {/* <FontAwesomeIcon icon={['far', 'ArrowAltCircleRight']}/> */}
+
+          {/* <FontAwesomeIcon icon={faArrowCircleRight}/> */}
         </div>
       </div>
     );
