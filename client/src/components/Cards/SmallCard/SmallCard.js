@@ -7,13 +7,13 @@ export default function SmallCard(props) {
     banner: "",
   });
 
-  // if (state.banner) {
+  if (props) {
     return (
       <div className="smallCard">
         <img src={props.src} alt={props.alt}/>
       </div>
     );
-  // } else {
-    // return null;
-  // }
+  } else {
+    return null;
+  }
 }

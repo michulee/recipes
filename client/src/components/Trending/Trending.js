@@ -54,7 +54,9 @@ export default function Trending(props) {
         {/* {console.log(<CardList/>)} */}
         <div className="grid">
           <CardList src={photos}/>
-          <FontAwesomeIcon icon={faArrowAltCircleRight} size="3x"/>
+          <div class="icon__container">
+            <FontAwesomeIcon className="icon" icon={faArrowAltCircleRight} size="3x"/>
+          </div>
           {/* <FontAwesomeIcon icon="arrow-alt-circle-right" /> */}
           {/* <FontAwesomeIcon icon={['far', 'arrow-alt-circle-right']}/> */}
           {/* <FontAwesomeIcon icon={['fas', 'coffee']} /> */}
