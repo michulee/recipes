@@ -4,13 +4,14 @@ import axios from 'axios';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import './App.scss';
 import Home from './pages/Home/Home';
+import { createApi } from 'unsplash-js';
 
 function App() {
   const [state, setState] = useState([]);
 
   //[] is state to update when it detects the state has changed
   useEffect(() => {
-    axios.get('http://localhost:3001/posts').then((res) => setState(res.data))
+    axios.get('http://localhost:3001/posts').then((res) => setState(res.data)).catch((error) => error.message)
   }, []);
 
   // 15:22 - https://www.youtube.com/watch?v=DO_wR1tx-O0&t=12s&ab_channel=PedroTech
