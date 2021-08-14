@@ -13,6 +13,8 @@ import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 export default function Blog(props) {
   const [photos, setPhotos] = useState([]);
 
+  // 
+
   // const CardItem = (props) => {
   //   // return <SmallCard src={props.url}/>
   //   return(
