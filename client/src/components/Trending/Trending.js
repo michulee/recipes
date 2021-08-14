@@ -60,20 +60,11 @@ export default function Trending(props) {
     return (
       <div className="trending">
         <h2 className="subheader">Trending</h2>
-        {/* {console.log(<CardList/>)} */}
         <div className="grid">
           <CardList src={photos}/>
-          <div class="icon__container" onClick={handleCarousel}>
+          <div className="icon__container" onClick={handleCarousel}>
             <FontAwesomeIcon className="icon" icon={faArrowAltCircleRight} size="3x"/>
           </div>
-          {/* <FontAwesomeIcon icon="arrow-alt-circle-right" /> */}
-          {/* <FontAwesomeIcon icon={['far', 'arrow-alt-circle-right']}/> */}
-          {/* <FontAwesomeIcon icon={['fas', 'coffee']} /> */}
-
-          {/* <FontAwesomeIcon icon={['far', 'arrowAltCircleRight']}/> */}
-          {/* <FontAwesomeIcon icon={['far', 'ArrowAltCircleRight']}/> */}
-
-          {/* <FontAwesomeIcon icon={faArrowCircleRight}/> */}
         </div>
       </div>
     );

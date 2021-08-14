@@ -6,6 +6,7 @@ import './_Home.scss'
 import Banner from '../../components/Banner/Banner';
 import Trending from '../../components/Trending/Trending';
 import Blog from '../../components/Blog/Blog';
+import Navigation from '../../components/Navigation/Navigation'
 
 export default function Home() {
   const [state, setState] = useState({
@@ -91,6 +92,8 @@ export default function Home() {
   return (
     <>
       <section className="home">
+          {/* <Navigation src={logo} alt={}/> */}
+          <Navigation/>
           <Banner/>
           <Trending items={6}/>
           <Blog items={2}/>
