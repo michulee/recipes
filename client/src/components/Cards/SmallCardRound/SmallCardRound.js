@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./_SmallCard.scss";
+import "./_SmallCardRound.scss";
 
-export default function SmallCard(props) {
+export default function SmallCardRound(props) {
   const [state, setState] = useState({
     banner: "",
   });
 
   if (props) {
     return (
-      <div className="smallCard">
+      <div className="smallCardRound">
         <img src={props.src} alt={props.alt}/>
       </div>
     );

@@ -3,7 +3,7 @@ import axios from "axios";
 import "./_Trending.scss";
 import unsplash from "../../api/unsplash";
 import {v4 as uuidv4} from 'uuid';
-import SmallCard from "../Cards/SmallCard/SmallCard";
+import SmallCard from "../Cards/SmallCardRound/SmallCardRound";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'

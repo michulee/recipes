@@ -3,7 +3,7 @@ import axios from "axios";
 import "./_Blog.scss";
 import unsplash from "../../api/unsplash";
 import {v4 as uuidv4} from 'uuid';
-import SmallCard from "../Cards/SmallCard/SmallCard";
+import SmallCardSquare from "../Cards/SmallCardSquare/SmallCardSquare";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons'
@@ -30,7 +30,7 @@ export default function Blog(props) {
       return(
         <>
           <div className="row">
-            <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
+            <SmallCardSquare className="card" key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
             <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
           </div>
         </>
