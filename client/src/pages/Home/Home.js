@@ -5,6 +5,7 @@ import unsplash from '../../api/unsplash';
 import './_Home.scss'
 import Banner from '../../components/Banner/Banner';
 import Trending from '../../components/Trending/Trending';
+import Blog from '../../components/Blog/Blog';
 
 export default function Home() {
   const [state, setState] = useState({
@@ -91,7 +92,8 @@ export default function Home() {
     <>
       <section className="home">
           <Banner/>
-          <Trending/>
+          <Trending items={6}/>
+          <Blog items={2}/>
       </section>
     </>
   );

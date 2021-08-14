@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./_Trending.scss";
+import "./_Blog.scss";
 import unsplash from "../../api/unsplash";
 import {v4 as uuidv4} from 'uuid';
 import SmallCard from "../Cards/SmallCard/SmallCard";
@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 // import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons'
 
-export default function Trending(props) {
+export default function Blog(props) {
   const [photos, setPhotos] = useState([]);
 
   // const CardItem = (props) => {
@@ -24,7 +24,15 @@ export default function Trending(props) {
     const photos = props.src;
     const listOfCards = photos.map((photo) => {
       // <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
-      return <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
+      // return <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
+      return(
+        <>
+          <div className="row">
+            <SmallCard key={photo.id} src={photo.urls.small} alt={photo.alt_description}/>
+            <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
+          </div>
+        </>
+      )
     });
     //this works with photos.map((photo) => <SmallCard/>)
     // return(
@@ -47,33 +55,12 @@ export default function Trending(props) {
     fetchData();
   });
 
-  const handleCarousel = (e) => {
-    // document.querySelector('.trending').scrollBy({
-    //   top: 40,
-    //   behavior: 'smooth',
-    // })
-    const a = document.querySelector('.trending')
-    console.log(a)
-  }
-
   if (photos) {
     return (
-      <div className="trending">
-        <h2 className="subheader">Trending</h2>
-        {/* {console.log(<CardList/>)} */}
+      <div className="blog">
+        <h2 className="subheader">Editor's Choice</h2>
         <div className="grid">
           <CardList src={photos}/>
-          <div class="icon__container" onClick={handleCarousel}>
-            <FontAwesomeIcon className="icon" icon={faArrowAltCircleRight} size="3x"/>
-          </div>
-          {/* <FontAwesomeIcon icon="arrow-alt-circle-right" /> */}
-          {/* <FontAwesomeIcon icon={['far', 'arrow-alt-circle-right']}/> */}
-          {/* <FontAwesomeIcon icon={['fas', 'coffee']} /> */}
-
-          {/* <FontAwesomeIcon icon={['far', 'arrowAltCircleRight']}/> */}
-          {/* <FontAwesomeIcon icon={['far', 'ArrowAltCircleRight']}/> */}
-
-          {/* <FontAwesomeIcon icon={faArrowCircleRight}/> */}
         </div>
       </div>
     );
