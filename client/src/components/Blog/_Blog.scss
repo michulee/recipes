@@ -54,13 +54,22 @@
         // background-color: pink;
 
         display: grid;
+        // grid-template-columns: 40% auto;
         grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: repeat(2, 40%);
         // grid-template-columns: repeat(2, 50%);
         // grid-template-columns: repeat(2, 100px);
         // grid-template-columns: 2;
-        justify-items: center;
-        justify-content: space-between;
+        // justify-items: center;
+        // justify-items: start;
+        // justify-content: space-between;
         align-items: center;
+    }
+    .align-left {
+        justify-items: start;
+    }
+    .align-right {
+        justify-items: end;
     }
     .row > * {
         // width: 100%;
