@@ -7,6 +7,7 @@ import Banner from '../../components/Banner/Banner';
 import Trending from '../../components/Trending/Trending';
 import Blog from '../../components/Blog/Blog';
 import Navigation from '../../components/Navigation/Navigation'
+import Advertisement from '../../components/Advertisement/Advertisement';
 
 export default function Home() {
   const [state, setState] = useState({
@@ -97,6 +98,7 @@ export default function Home() {
           <Banner/>
           <Trending items={6}/>
           <Blog items={2}/>
+          <Advertisement items={2}/>
       </section>
     </>
   );

@@ -23,6 +23,8 @@ export default function Blog(props) {
 
   const CardList = (props) => {
     const photos = props.src;
+    // console.log(photos)
+
     // const listOfCards = photos.map((photo) => {
     //   return(
     //     <div className="row" key={photo.id} >
@@ -38,49 +40,39 @@ export default function Blog(props) {
       // 0 and even
       if (i % 2 === 0) {
         listOfCards.push(
-          <>
-            <div className="row ">
-              <SmallCardSquare
-                className="card "
-                key={photos[i].id}
-                src={photos[i].urls.small}
-                alt={photos[i].alt_description}
-              />
-              <div className="adjust">
-                <h3>Delicious avocado toast</h3>
-                <div>
-                  Leverage agile frameworks to provide a robust synopsis for
-                  high level overviews. Iterative approaches to corporate
-                  strategy foster collaborative thinking to further the overall
-                  value proposition. Organically grow the holistic world view of
-                  disruptive innovation via workplace diversity and empowerment.
-                </div>
-              </div>
+          <div className="row " key={photos[i].id}>
+            <SmallCardSquare className="card"  src={photos[i].urls.small} alt={photos[i].alt_description}/>
+            <div className="adjust">
+              <h3>Delicious avocado toast</h3>
+              <p>
+                Leverage agile frameworks to provide a robust synopsis for
+                high level overviews. Iterative approaches to corporate
+                strategy foster collaborative thinking to further the overall
+                value proposition. Organically grow the holistic world view of
+                disruptive innovation via workplace diversity and empowerment.
+              </p>
             </div>
-          </>
+          </div>
         );
       } else {
         listOfCards.push(
-          <>
-            <div className="row align-right">
-              <div className="adjust">
-                <h3>Delicious fish with sauce</h3>
-                <div>
-                  Leverage agile frameworks to provide a robust synopsis for
-                  high level overviews. Iterative approaches to corporate
-                  strategy foster collaborative thinking to further the overall
-                  value proposition. Organically grow the holistic world view of
-                  disruptive innovation via workplace diversity and empowerment.
-                </div>
-              </div>
-              <SmallCardSquare
-                className="card"
-                key={photos[i].id}
-                src={photos[i].urls.small}
-                alt={photos[i].alt_description}
-              />
+          <div className="row align-right" key={photos[i].id}>
+            <div className="adjust">
+              <h3>Delicious fish with sauce</h3>
+              <p>
+                Leverage agile frameworks to provide a robust synopsis for
+                high level overviews. Iterative approaches to corporate
+                strategy foster collaborative thinking to further the overall
+                value proposition. Organically grow the holistic world view of
+                disruptive innovation via workplace diversity and empowerment.
+              </p>
             </div>
-          </>
+            <SmallCardSquare
+              className="card"
+              src={photos[i].urls.small}
+              alt={photos[i].alt_description}
+            />
+          </div>
         );
       }
     }
