@@ -5,6 +5,7 @@
     height: 3rem;
     // background-color: pink;
     border: 1px solid rgba(0, 0, 0, 0.09);
+    z-index: 1;
 
     display: flex;
     // align-items: center;
@@ -51,7 +52,10 @@
 
 @media (min-width: 769px) {
     .search {
-        width: 80%;
+        display: block;
+        background-color: pink;
+        // width: 80%;
+        width: 200px;
         height: 70%;
         border: 1px solid rgba(0, 0, 0, 0.09);
         border-radius: 1rem;

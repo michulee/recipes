@@ -6,11 +6,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 export default function Navigation(props) {
-  const [search, setSearch] = useState('');
+  const [toggleSearch, setSearch] = useState(false);
   const handleSearch = (e) => {
+    setSearch(true);
+    console.log('click')
+
     // click on search button, then return new search component
-    // if next is click on search icon || not on search area, then return old search component
+
+    // if next is click on search icon || not on search area, then toggleSerach(false) return old component
+    // useEffect, if new search component is up, if next is click on search icon || not on search area, then toggleSerach(false) return old component
   }
+
+  const ToggledSearch = (e) => {
+    return (
+      <div className="search">
+        {/* <FontAwesomeIcon onClick={handleSearch} className="icon" icon={faSearch} size="lg"/> */}
+        <FontAwesomeIcon className="icon" icon={faSearch} size="lg"/>
+      </div>
+    );
+  }
+
+  useEffect((e) => {
+    if(toggleSearch) {
+      console.log('toggled search')
+      // click on button then search
+
+      // press enter then search
+
+      // click outside of search then setSearch(false)
+      console.log(e.target)
+    }
+  }, [toggleSearch])
 
   if (props) {
     return (
@@ -22,8 +48,7 @@ export default function Navigation(props) {
           </div>
         </div>
         <div className="right">
-          <div className="search"></div>
-          <FontAwesomeIcon onClick={handleSearch} className="icon" icon={faSearch} size="lg"/>
+          {toggleSearch ? <ToggledSearch/> : <FontAwesomeIcon onClick={handleSearch} className="icon" icon={faSearch} size="lg"/>}
 
           <div className="menu"></div>
           <FontAwesomeIcon className="icon" icon={faEllipsisV} size="lg"/>

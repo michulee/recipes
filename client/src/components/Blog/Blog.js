@@ -12,7 +12,6 @@ import { faArrowAltCircleRight } from '@fortawesome/free-regular-svg-icons'
 
 export default function Blog(props) {
   const [photos, setPhotos] = useState([]);
-
   // 
 
   // const CardItem = (props) => {
@@ -24,26 +23,40 @@ export default function Blog(props) {
 
   const CardList = (props) => {
     const photos = props.src;
-    const listOfCards = photos.map((photo) => {
-      return(
-        <div className="row" key={photo.id} >
-          <SmallCardSquare className="card" src={photo.urls.small} alt={photo.alt_description}/>
-          <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
-        </div>
-      )
-    });
-
-    // const listOfCards = [];
-    // for(let i = 0; i < 2; i++) {
-    //   listOfCards.push(
-    //     <>
-    //     <div className="row">
-    //       <SmallCardSquare className="card" key={photos[i].id} src={photos[i].urls.small} alt={photos[i].alt_description}/>
+    // const listOfCards = photos.map((photo) => {
+    //   return(
+    //     <div className="row" key={photo.id} >
+    //       <SmallCardSquare className="card" src={photo.urls.small} alt={photo.alt_description}/>
     //       <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
     //     </div>
-    //     </> 
     //   )
-    // }
+    // });
+
+    const listOfCards = [];
+
+    for(let i = 0; i < props.items; i++) {
+      // 0 and even
+      if(i % 2 === 0) {
+        listOfCards.push(
+          <>
+          <div className="row">
+            <SmallCardSquare className="card" key={photos[i].id} src={photos[i].urls.small} alt={photos[i].alt_description}/>
+            <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
+          </div>
+          </> 
+        )
+      } else {
+        listOfCards.push(
+          <>
+          <div className="row">
+            <div>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.</div>
+            <SmallCardSquare className="card" key={photos[i].id} src={photos[i].urls.small} alt={photos[i].alt_description}/>
+          </div>
+          </> 
+        )
+      }
+
+    }
 
 
     //this works with photos.map((photo) => <SmallCard/>)
@@ -77,7 +90,7 @@ export default function Blog(props) {
         </div> */}
 
         <div className="grid">
-          <CardList src={photos}/>
+          <CardList src={photos} items={props.items}/>
         </div>
       </div>
     );

@@ -51,17 +51,21 @@
     }
 
     .row {
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        background-color: pink;
+        // background-color: pink;
 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: repeat(2, 50%);
+        // grid-template-columns: repeat(2, 100px);
+        // grid-template-columns: 2;
         justify-items: center;
+        justify-content: space-between;
         align-items: center;
     }
     .row > * {
         // width: 100%;
+    }
+    .row:nth-of-type(even) {
+        // background-color: teal;
     }
 }
