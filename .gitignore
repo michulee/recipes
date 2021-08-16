@@ -12,3 +12,9 @@ node_modules
 
 # Ignore SASS config files
 .sass-cache
+
+# Ignore server folder
+server
+
+# Ignore sequelize config file
+.sequelizerc
