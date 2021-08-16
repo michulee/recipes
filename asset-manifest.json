@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/recipes/static/css/main.08ea8adf.chunk.css",
+    "main.js": "/recipes/static/js/main.14a39a5e.chunk.js",
+    "main.js.map": "/recipes/static/js/main.14a39a5e.chunk.js.map",
+    "runtime-main.js": "/recipes/static/js/runtime-main.49a93f7b.js",
+    "runtime-main.js.map": "/recipes/static/js/runtime-main.49a93f7b.js.map",
+    "static/js/2.a50dac72.chunk.js": "/recipes/static/js/2.a50dac72.chunk.js",
+    "static/js/2.a50dac72.chunk.js.map": "/recipes/static/js/2.a50dac72.chunk.js.map",
+    "static/js/3.7f38df25.chunk.js": "/recipes/static/js/3.7f38df25.chunk.js",
+    "static/js/3.7f38df25.chunk.js.map": "/recipes/static/js/3.7f38df25.chunk.js.map",
+    "index.html": "/recipes/index.html",
+    "static/css/main.08ea8adf.chunk.css.map": "/recipes/static/css/main.08ea8adf.chunk.css.map",
+    "static/js/2.a50dac72.chunk.js.LICENSE.txt": "/recipes/static/js/2.a50dac72.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/recipes/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.49a93f7b.js",
+    "static/js/2.a50dac72.chunk.js",
+    "static/css/main.08ea8adf.chunk.css",
+    "static/js/main.14a39a5e.chunk.js"
+  ]
+}
