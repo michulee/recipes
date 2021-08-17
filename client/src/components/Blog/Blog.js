@@ -37,7 +37,11 @@ export default function Blog(props) {
   }, []);
 
   const CardList = (props) => {
-    const photos = props.src;
+    // const photos = props.src;
+
+    // display up to props.items
+    const photos = props.src.slice(0, props.items);
+    
     return (
       <>
         {photos.map((photo, i) => {
@@ -46,7 +50,7 @@ export default function Blog(props) {
               <div className="row " key={photo.id}>
                 <SmallCardSquare
                   className="card"
-                  src={photo.urls.small}
+                  src={photo.urls.regular}
                   alt={photo.alt_description}
                 />
                 <div className="adjust">
@@ -78,7 +82,7 @@ export default function Blog(props) {
                 </div>
                 <SmallCardSquare
                   className="card"
-                  src={photo.urls.small}
+                  src={photo.urls.regular}
                   alt={photo.alt_description}
                 />
               </div>

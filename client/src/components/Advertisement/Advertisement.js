@@ -4,60 +4,58 @@ import unsplash from "../../api/unsplash";
 
 export default function Advertisement(props) {
   const [advertisement, setAdvertisements] = useState([]);
-  //
-
-  // const CardItem = (props) => {
-  //   // return <SmallCard src={props.url}/>
-  //   return(
-
-  //   );
-  // }
 
   const AdvertiseList = (props) => {
-    const photos = props.src;
+    // const photos = props.src;
+
+    // display up to props.items
+    const photos = props.src.slice(0, props.items);
 
     return (
       <>
         {photos.map((photo, i) => {
-          // 0 and even
-          if (i % 2 === 0) {
-            return <div className="row align-left" key={photo.id}>
-              <img
-                className="card"
-                src={photo.urls.small}
-                alt={photo.alt_description}
-              />
-              <div className="adjust">
-                <h3>Delicious avocado toast</h3>
-                <p>
-                  Leverage agile frameworks to provide a robust synopsis for
-                  high level overviews. Iterative approaches to corporate
-                  strategy foster collaborative thinking to further the overall
-                  value proposition. Organically grow the holistic world view of
-                  disruptive innovation via workplace diversity and empowerment.
-                </p>
-              </div>
-            </div>;
-          } else {
-            //odd
-            return <div className="row align-right" key={photo.id}>
-              <div className="adjust">
-                <h3>Delicious fish with sauce</h3>
-                <p>
-                  Leverage agile frameworks to provide a robust synopsis for
-                  high level overviews. Iterative approaches to corporate
-                  strategy foster collaborative thinking to further the overall
-                  value proposition. Organically grow the holistic world view of
-                  disruptive innovation via workplace diversity and empowerment.
-                </p>
-              </div>
-              <img
-                className="card"
-                src={photo.urls.small}
-                alt={photo.alt_description}
-              />
-            </div>;
-          }
+          // if(i < props.items) {
+            // 0 and even
+            if (i % 2 === 0) {
+              return <div className="row align-left" key={photo.id}>
+                <img
+                  className="card"
+                  src={photo.urls.regular}
+                  alt={photo.alt_description}
+                />
+                <div className="adjust">
+                  <h3>Delicious avocado toast</h3>
+                  <p>
+                    Leverage agile frameworks to provide a robust synopsis for
+                    high level overviews. Iterative approaches to corporate
+                    strategy foster collaborative thinking to further the overall
+                    value proposition. Organically grow the holistic world view of
+                    disruptive innovation via workplace diversity and empowerment.
+                  </p>
+                </div>
+              </div>;
+            } else {
+              //odd
+              return <div className="row align-right" key={photo.id}>
+                <div className="adjust">
+                  <h3>Delicious fish with sauce</h3>
+                  <p>
+                    Leverage agile frameworks to provide a robust synopsis for
+                    high level overviews. Iterative approaches to corporate
+                    strategy foster collaborative thinking to further the overall
+                    value proposition. Organically grow the holistic world view of
+                    disruptive innovation via workplace diversity and empowerment.
+                  </p>
+                </div>
+                <img
+                  className="card"
+                  src={photo.urls.regular}
+                  alt={photo.alt_description}
+                />
+              </div>;
+            }
+          // }
+
         })}
       </>
     );
