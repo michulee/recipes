@@ -9,6 +9,15 @@
     background-color: white;
     position: relative;
     .subheader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.25rem;
+        svg {
+            font-size: 1.25rem;
+        }
+    }
+    .title {
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.5rem;
