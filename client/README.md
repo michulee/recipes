@@ -4,7 +4,7 @@
 
 **Recipes is a project that is a work-in-progress.**
 
-![Recipes Desktop](client\src\assets\recipes.png)
+![Recipes Desktop](/client/src/assets/recipes.png)
 
 ## Table of content
 
