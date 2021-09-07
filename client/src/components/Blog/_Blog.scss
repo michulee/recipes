@@ -24,7 +24,8 @@
     }
     .grid {
         // width: 100%;
-        max-width: 600px;
+        // max-width: 600px;
+        max-width: 900px;
         margin: 0 auto;
 
         display: grid;
@@ -59,20 +60,25 @@
         // background-image: linear-gradient(90deg, #8888881c 0%, #797979a8 74%);
     }
 
+
+    .content {
+        grid-area: content;
+    }
+    .card {
+        grid-area: card;
+    }
     .row {
         // background-color: pink;
 
         display: grid;
-        // grid-template-columns: 40% auto;
+        grid-template-areas: 
+        "content card"
+        ;
+        
         grid-template-columns: repeat(2, 1fr);
-        // grid-template-columns: repeat(2, 40%);
-        // grid-template-columns: repeat(2, 50%);
-        // grid-template-columns: repeat(2, 100px);
-        // grid-template-columns: 2;
-        // justify-items: center;
-        // justify-items: start;
-        // justify-content: space-between;
         align-items: center;
+
+
     }
     .align-left {
         justify-items: start;

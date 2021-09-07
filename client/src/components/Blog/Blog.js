@@ -47,13 +47,13 @@ export default function Blog(props) {
         {photos.map((photo, i) => {
           if (i % 2 === 0) {
             return (
-              <div className="row " key={photo.id}>
+              <div className="row" key={photo.id}>
                 <SmallCardSquare
                   className="card"
                   src={photo.urls.regular}
                   alt={photo.alt_description}
                 />
-                <div className="adjust">
+                <div className="content">
                   <h3>Delicious avocado toast</h3>
                   <p>
                     Leverage agile frameworks to provide a robust synopsis for
@@ -69,7 +69,7 @@ export default function Blog(props) {
           } else {
             return (
               <div className="row align-right" key={photo.id}>
-                <div className="adjust">
+                <div className="content">
                   <h3>Delicious fish with sauce</h3>
                   <p>
                     Leverage agile frameworks to provide a robust synopsis for

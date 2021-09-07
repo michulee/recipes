@@ -57,14 +57,16 @@ export default function Trending(props) {
   }
 
   if (photos) {
+    // should show an array of objects
+    // console.log("photos", photos)
     return (
       <div className="trending">
         <h2 className="subheader">Trending</h2>
         <div className="grid">
           <CardList src={photos}/>
-          <div className="icon__container" onClick={handleCarousel}>
+          {/* <div className="icon__container" onClick={handleCarousel}>
             <FontAwesomeIcon className="icon" icon={faArrowAltCircleRight} size="3x"/>
-          </div>
+          </div> */}
         </div>
       </div>
     );
