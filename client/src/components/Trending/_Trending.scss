@@ -1,3 +1,18 @@
+*::-webkit-scrollbar {
+    height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    /*   background-color: rgba(155, 155, 155, 0.5); */
+    background-color: darkgray;
+    border-radius: 20px;
+    border: transparent;
+}
+
 .trending {
     width: 100%;
     // height: 100px;
@@ -7,44 +22,62 @@
     padding-bottom: 3rem;
     // overflow: scroll;
     overflow: hidden;
+
     .subheader {
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 0.5rem;
     }
-    .grid {
-        // width: 100%;
+
+    // .grid {
+    //     display: grid;
+    //     grid-auto-flow: column;
+    //     gap: 1rem;
+    // }
+
+    .carousel {
+        /*   for firefox */
+        scrollbar-width: thin;
+        scrollbar-color: darkgray transparent;
+
         display: grid;
         grid-auto-flow: column;
         gap: 1rem;
-    }
-    .icon__container {
-        position: absolute;
-        right: 0;
 
-        height: 200px;
-        // width: 100px;
-        width: 5rem;
-        background-image: linear-gradient(90deg, #ffffff00 0%, #ffffffa8 74%);
-        // background-image: linear-gradient(90deg, #ffffff00 0%, #424242a8 74%);
+        overflow: hidden;
+        padding: 1rem;
+
+        position: relative;
+
+        overflow-x: scroll;
+        scroll-behavior: smooth;
     }
-    .icon {
-        position: absolute;
-        right: 0;
-        transform: translate(0, -50%);
-        // transform: translate(-50%, -50%);
-        top: 50%;
-        // bottom: -50%;
-        // color: white;
-        color: black;
-        
-        // height: 200px;
-        // background-color: white;
-        // background-image: linear-gradient(90deg, #8888881c 0%, #797979a8 74%);
-        
-        // height: 100%;
-    }
-    .icon:hover {
-        // background-image: linear-gradient(90deg, #8888881c 0%, #797979a8 74%);
-    }
+
+    // .icon__container {
+    //     position: absolute;
+    //     right: 0;
+
+    //     height: 200px;
+    //     width: 5rem;
+    //     background-image: linear-gradient(90deg, #ffffff00 0%, #ffffffa8 74%);
+    // }
+    // .icon {
+    //     position: absolute;
+    //     right: 0;
+    //     transform: translate(0, -50%);
+    //     // transform: translate(-50%, -50%);
+    //     top: 50%;
+    //     // bottom: -50%;
+    //     // color: white;
+    //     color: black;
+
+    //     // height: 200px;
+    //     // background-color: white;
+    //     // background-image: linear-gradient(90deg, #8888881c 0%, #797979a8 74%);
+
+    //     // height: 100%;
+    // }
+    // .icon:hover {
+    //     // background-image: linear-gradient(90deg, #8888881c 0%, #797979a8 74%);
+    // }
 }

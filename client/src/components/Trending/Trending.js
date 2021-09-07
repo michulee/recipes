@@ -62,7 +62,7 @@ export default function Trending(props) {
     return (
       <div className="trending">
         <h2 className="subheader">Trending</h2>
-        <div className="grid">
+        <div className="carousel">
           <CardList src={photos}/>
           {/* <div className="icon__container" onClick={handleCarousel}>
             <FontAwesomeIcon className="icon" icon={faArrowAltCircleRight} size="3x"/>
