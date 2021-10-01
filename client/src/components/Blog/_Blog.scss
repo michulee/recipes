@@ -68,17 +68,21 @@
         grid-area: card;
     }
     .row {
-        // background-color: pink;
-
         display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // grid-template-columns: 100px 200px;
+        align-items: center;
+    }
+    .row:nth-of-type(odd) {
         grid-template-areas: 
         "content card"
+        // " card content"
         ;
-        
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-
-
+    }
+    .row:nth-of-type(even) {
+        grid-template-areas: 
+        " card content"
+        ;
     }
     .align-left {
         justify-items: start;
@@ -89,7 +93,19 @@
     .row > * {
         // width: 100%;
     }
+
+}
+@media (min-width: 560px) {
+    .card {
+        // width: 10%;
+
+    }
+    img {
+        width: 500px;
+    }
+    .row:nth-of-type(odd) {
+
+    }
     .row:nth-of-type(even) {
-        // background-color: teal;
     }
 }

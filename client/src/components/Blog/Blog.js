@@ -25,6 +25,7 @@ export default function Blog(props) {
 
       if (isMounted) {
         setPhotos(data.response.results);
+        console.log(photos)
       }
     };
     fetchData();
