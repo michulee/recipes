@@ -8,6 +8,7 @@ import Trending from '../../components/Trending/Trending';
 import Blog from '../../components/Blog/Blog';
 import Navigation from '../../components/Navigation/Navigation'
 import Advertisement from '../../components/Advertisement/Advertisement';
+import Footer from '../../components/Footer/Footer';
 
 export default function Home() {
   const [state, setState] = useState({
@@ -96,9 +97,16 @@ export default function Home() {
           {/* <Navigation src={logo} alt={}/> */}
           <Navigation/>
           <Banner/>
+
+          {/* featured trending items */}
           <Trending items={6}/>
+
+          {/* featured reviews */}
           <Blog items={2}/>
+
+          
           <Advertisement items={2}/>
+          <Footer/>
       </section>
     </>
   );
